@@ -17,7 +17,7 @@ const Avatar = () => {
     `
   )
 
-  return <Img fluid={avatarImage.childImageSharp.fluid} />
+  return <Img fluid={avatarImage.childImageSharp.fluid} style={{ width: 60 }} />
 }
 
 export default Avatar
