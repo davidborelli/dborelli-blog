@@ -22,7 +22,7 @@ export const PostItemWrapper = styled.section`
 export const PostItemTag = styled.div`
   display: flex;
   align-items: center;
-  background: ${props => props.background || "black"};
+  background: ${props => props.background || "#1fa1f2"};
   border-radius: 50%;
   color: #fff;
   font-size: 1.3rem;
