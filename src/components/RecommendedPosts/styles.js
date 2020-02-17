@@ -34,7 +34,7 @@ export const RecommendedLink = styled(Link)`
     content: "\\2190";
     margin-right: 0.5rem;
   }
-  
+
   &.next:after {
     content: "\\2192";
     margin-left: 0.5rem;
