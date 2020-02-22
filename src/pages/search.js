@@ -8,7 +8,6 @@ import Search from "../components/Search"
 const SearchPage = () => (
   <Layout>
     <SEO title="Search" />
-    <h1>Search Page</h1>
     <Search />
   </Layout>
 )

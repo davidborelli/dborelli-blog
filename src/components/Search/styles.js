@@ -17,7 +17,7 @@ export const SearchWrapper = styled.section`
     padding: 0.5rem 3rem;
   }
   .ais-SearchBox {
-    padding-top: 6rem;
+    padding-top: 3rem;
   }
   .ais-Stats {
     color: #8899a6;
