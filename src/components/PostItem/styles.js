@@ -28,13 +28,13 @@ export const PostItemWrapper = styled.section`
     padding: 2rem 1rem;
     flex-direction: column;
     justify-content: center;
-
-    ${media.lessThan("large")`
-      align-items: flex-start;
-      flex-direction: column;
-      padding: 2rem 1rem;
-  `}
   }
+
+  ${media.lessThan("large")`
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2rem 1rem;
+  `}
 `
 
 export const PostItemTag = styled.div`
