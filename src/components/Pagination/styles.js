@@ -5,16 +5,16 @@ export const PaginationWrapper = styled.section`
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 3rem;
-  border-top: 1px solid #38444d;
-  color: #8899a6;
+  border-top: 1px solid var(--borders);
+  color: var(--texts);
 
   a {
-    color: #8899a6;
+    color: var(--texts);
     text-decoration: none;
     transition: color 0.5s;
 
     &:hover {
-      color: #1fa1f2;
+      color: var(--highlight);
     }
   }
 `
