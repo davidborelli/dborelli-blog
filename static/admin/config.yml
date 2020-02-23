@@ -2,7 +2,7 @@ backend:
   name: github
   repo: davidborelli/dborelli-blog
   branch: master
-  site_domain: https://www.dborelli.com.br/
+  site_domain: www.dborelli.com.br/
 
 publish_mode: editorial_workflow
 media_folder: "static/assets/img"
