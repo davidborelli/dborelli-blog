@@ -8,6 +8,7 @@ import { Grid } from "styled-icons/boxicons-solid/Grid"
 import { List } from "styled-icons/fa-solid/List"
 
 import * as S from "./styles"
+import getThemeColor from "../../utils/getThemeColor"
 
 const MenuBar = () => {
   const [theme, setTheme] = useState(null)
@@ -31,7 +32,7 @@ const MenuBar = () => {
           to="/"
           cover
           direction="right"
-          bg="#16202c"
+          bg={getThemeColor()}
           duration="0.6"
           activeClassName="active"
           title="Voltar para home"
@@ -44,7 +45,7 @@ const MenuBar = () => {
           to="/search"
           cover
           direction="right"
-          bg="#16202c"
+          bg={getThemeColor()}
           duration="0.6"
           activeClassName="active"
           title="Pesquisar"
