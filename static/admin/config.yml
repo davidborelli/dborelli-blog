@@ -24,4 +24,22 @@ collections:
           format: "YYYY-MM-DD hh:mm:ss",
         }
       - { label: "image", name: "thumbnail", widget: "image" }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options: ["JS", "HTML", "tips", "dev"],
+        }
+      - {
+          label: "Background",
+          name: "background",
+          widget: "select",
+          options:
+            [
+              { label: "JS", value: "#D6BA32" },
+              { label: "HTML", value: "#e34d26" },
+              { label: "tips", value: "#63935D" },
+              { label: "dev", value: "#D50287" },
+            ],
+        }
       - { label: "Body", name: "body", widget: "markdown" }
