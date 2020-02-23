@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import media from "styled-media-query"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 export const MenuBarWrapper = styled.aside`
   align-items: center;
@@ -35,7 +35,7 @@ export const MenuBarGroup = styled.div`
   `}
 `
 
-export const MenuBarLink = styled(Link)`
+export const MenuBarLink = styled(AniLink)`
   display: block;
 
   &.active {
@@ -63,11 +63,16 @@ export const MenuBarItem = styled.span`
       display: none;
     `}
   }
-  ${media.greaterThan("large")`
+
+  &:hover {
+    color: var(--highlight);
+  }
+
+  /* ${media.greaterThan("large")`
     &:hover {
       color: var(--highlight);
     }
-  `}
+  `} */
 
   /* ${media.lessThan("large")`
     height: 3.2rem;
