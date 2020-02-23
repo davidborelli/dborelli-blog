@@ -8,6 +8,7 @@ module.exports = {
     position: `Desenvolvedor Front End`,
     description: `A blog abaut development and other cool stuff`,
     author: `@davidBorelli`,
+    siteUrl: `https://wwwdborelli.com.br`,
   },
   plugins: [
     `gatsby-plugin-transition-link`,
@@ -79,7 +80,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `${__dirname}/static/assets/img/DB.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
