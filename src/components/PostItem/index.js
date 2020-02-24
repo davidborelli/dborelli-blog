@@ -21,15 +21,17 @@ const PostItem = ({
     duration="0.6"
   >
     <S.PostItemWrapper>
-      <S.PostItemTag background={background}>{category}</S.PostItemTag>
-      <S.PostItemInfo>
-        <S.PostItemDate>
-          {date} • {timeToRead} {timeToRead <= 1 ? "minuto" : "minutos"} de
-          leitura
-        </S.PostItemDate>
-        <S.PostItemTitle>{title}</S.PostItemTitle>
-        <S.PostItemDescription>{description}</S.PostItemDescription>
-      </S.PostItemInfo>
+      <S.BoxHandle>
+        <S.PostItemTag background={background}>{category}</S.PostItemTag>
+        <S.PostItemInfo>
+          <S.PostItemDate>
+            {date} • {timeToRead} {timeToRead <= 1 ? "minuto" : "minutos"} de
+            leitura
+          </S.PostItemDate>
+          <S.PostItemTitle>{title}</S.PostItemTitle>
+          <S.PostItemDescription>{description}</S.PostItemDescription>
+        </S.PostItemInfo>
+      </S.BoxHandle>
     </S.PostItemWrapper>
   </S.PostItemLink>
 )

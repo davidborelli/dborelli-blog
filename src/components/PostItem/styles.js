@@ -9,22 +9,61 @@ export const PostItemLink = styled(AniLink)`
 
   body#grid & {
     background-color: var(--background);
-  }
-
-  &:hover {
-    color: var(--highlight);
+    height: 100%;
   }
 `
 
 export const PostItemWrapper = styled.section`
   display: flex;
-  align-items: center;
-  border-bottom: 1px solid var(--borders);
-  padding: 2rem 3rem;
   width: 100%;
+`
+
+export const BoxHandle = styled.article`
+  border: 1px solid var(--borders);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px var(--borders);
+  color: var(--texts);
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 1.6rem;
+  position: relative;
+  will-change: border-color;
+
+  &:after,
+  &:before {
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: transform 0.45s;
+  }
+
+  &:before {
+    border-left: 1px solid var(--highlight-border);
+    border-right: 1px solid var(--highlight-border);
+    transform: scaleY(0);
+  }
+
+  &:after {
+    border-bottom: 1px solid var(--highlight-border);
+    border-top: 1px solid var(--highlight-border);
+    transform: scaleX(0);
+  }
+
+  &:hover {
+    &:before {
+      transform: scaleY(1);
+    }
+
+    &:after {
+      transform: scaleX(1);
+    }
+  }
 
   body#grid & {
-    border: none;
     padding: 2rem 1rem;
     flex-direction: column;
     justify-content: center;
