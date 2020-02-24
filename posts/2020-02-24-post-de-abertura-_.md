@@ -12,7 +12,7 @@ background: '#47650A'
 
 Bom, antes de explicar o motivo pelo qual resolvi criar o blog acho melhor eu me apresentar né?
 
-Meu nome é David Borelli, tenho 30 anos (rosto de 18 rsrs), sou desenvolvedor Front End no [KaBuM! www.kabum.com.br](https://www.kabum.com.br). Trabalho à cerca de 2 anos como desenvolvedor, e desses 24 meses, uns 10 como a parte web.
+Meu nome é David Borelli, tenho 30 anos (rosto de 18 rsrs), sou desenvolvedor Front End no [KaBuM! www.kabum.com.br](https://www.kabum.com.br). Trabalho ha cerca de 2 anos como desenvolvedor, e desses 24 meses, uns 10 como a parte web.
 
 Antes de entrar de cabeça na área de tecnologia fui designer/arte-finalista de calçados infantis, na [Pampili](https://www.pampili.com.br) e na [Kidy](https://www.kidy.com.br), mas por que? Bom, simplesmente por ter abraçado as oportunidades que foram me apresentadas na época.
 
