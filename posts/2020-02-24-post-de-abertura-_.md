@@ -18,6 +18,8 @@ Antes de entrar de cabeça na área de tecnologia fui designer/arte-finalista de
 
 Depois da fase "designer", resolvi cursar  Engenharia da Computação pelo [UniSALESIANO de Araçatuba](https://unisalesiano.com.br/), pois é uma área pela qual sempre ative afeição (sempre fui o menino do computador rsrs) e apaixonado por desafios, terminei o mesmo em 2019, depois de um looongo tempo rsrs.
 
+Depois de ter entrado na área de tecnologia também tive a oportunidade de passar pelas empresas [Gigatron Franchising](https://www.gigatron.com.br/franquia) onde atuei como suporte técnico, e também pelo [Grupo Assessor](http://grupoassessor.com/), onde também atuei um breve tempo como suporte técnico e depois como Desenvolvedor Delphi, sim, foram eles que me abriram as portas para de fato aplicar os conhecimentos que já vinha estudando, sou muito grato por isso.
+
 Sobre o motivo de criação do blog, sempre naveguei muito na internet atrás de conhecimento e coisas por quais me interessam, e sempre caia em alguns blogs que me enchiam os olhos, pelo nível das postagens, então sempre pensava, um dia quero ter um blog e poder compartilhar conhecimentos e experiências, e finalmente esse dia chegou hahah.
 
 Pretendo escrever o máximo que der sobre tudo, desde avançado até dicas rápidas, claro que o foco será sobre Front End, mas nada impede de um dia talvez escrever sobre Java, ou alguma técnica de estudo, que é outro assunto que gosto muito. Espero que gostem do blog e um feedback é sempre bem vindo =)
