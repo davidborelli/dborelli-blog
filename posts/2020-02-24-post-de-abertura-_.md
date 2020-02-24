@@ -14,11 +14,11 @@ Bom, antes de explicar o motivo pelo qual resolvi criar o blog acho melhor eu me
 
 Meu nome é David Borelli, tenho 30 anos (rosto de 18 rsrs), sou desenvolvedor Front End no [KaBuM! www.kabum.com.br](https://www.kabum.com.br). Trabalho à cerca de 2 anos como desenvolvedor, e desses 24 meses, uns 10 como a parte web.
 
-Antes de entrar de cabeça a área de tecnologia fui designer/arte-finalista de calçados infantis, na [Pampili](https://www.pampili.com.br) e na [Kidy](https://www.kidy.com.br), mas por que? Bom, simplesmente por ter abraçado as oportunidades que foram me apresentadas na época.
+Antes de entrar de cabeça na área de tecnologia fui designer/arte-finalista de calçados infantis, na [Pampili](https://www.pampili.com.br) e na [Kidy](https://www.kidy.com.br), mas por que? Bom, simplesmente por ter abraçado as oportunidades que foram me apresentadas na época.
 
 Depois da fase "designer", resolvi cursar  Engenharia da Computação pelo [UniSALESIANO de Araçatuba](https://unisalesiano.com.br/), pois é uma área pela qual sempre ative afeição (sempre fui o menino do computador rsrs) e apaixonado por desafios, terminei o mesmo em 2019, depois de um looongo tempo rsrs.
 
-Sobre o motivo de criação do blog, sempre naveguei muito na internet atrás de conhecimento e coisas por quais me interessam, e sempre caia em alguns blogs que em enchiam os olhos, pelo nível das postagens, então sempre pensava, um dia quero ter um blog e poder compartilhar conhecimentos e experiências, e finalmente esse dia chegou hahah.
+Sobre o motivo de criação do blog, sempre naveguei muito na internet atrás de conhecimento e coisas por quais me interessam, e sempre caia em alguns blogs que me enchiam os olhos, pelo nível das postagens, então sempre pensava, um dia quero ter um blog e poder compartilhar conhecimentos e experiências, e finalmente esse dia chegou hahah.
 
 Pretendo escrever o máximo que der sobre tudo, desde avançado até dicas rápidas, claro que o foco será sobre Front End, mas nada impede de um dia talvez escrever sobre Java, ou alguma técnica de estudo, que é outro assunto que gosto muito. Espero que gostem do blog e um feedback é sempre bem vindo =)
 
