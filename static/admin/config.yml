@@ -28,7 +28,7 @@ collections:
           label: "Category",
           name: "category",
           widget: "select",
-          options: ["JS", "HTML", "tips", "dev"],
+          options: ["JS", "HTML", "tips", "dev", "MISC"],
         }
       - {
           label: "Background",
@@ -40,6 +40,7 @@ collections:
               { label: "HTML", value: "#e34d26" },
               { label: "tips", value: "#63935D" },
               { label: "dev", value: "#D50287" },
+              { label: "MISC", value: "#47650A" },
             ],
         }
       - { label: "Body", name: "body", widget: "markdown" }

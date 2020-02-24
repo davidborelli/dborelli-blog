@@ -3,8 +3,8 @@ title: Post de abertura *_*
 description: Postagem de abertura do Blog
 date: '2020-02-24 02:39:29'
 image: /assets/img/Comemoracao.jpg
-category: dev
-background: '#D50287'
+category: MISC
+background: '#47650A'
 ---
 ## antes de qualquer coisa...
 
