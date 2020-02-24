@@ -11,15 +11,15 @@ module.exports = {
     siteUrl: `https://wwwdborelli.com.br`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-react-helmet`,
     {
       // needs to be a first to work with gatsby-remark-image plugin
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `uploads`,
         path: `${__dirname}/static/assets/img`,
+        name: `uploads`,
       },
     },
     {
