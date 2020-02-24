@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `David Borelli`,
     position: `Desenvolvedor Front End`,
-    description: `A blog abaut development and other cool stuff`,
+    description: `Em evolução num cenário onde a única constante é a mudança.`,
     author: `@davidBorelli`,
     siteUrl: `https://wwwdborelli.com.br`,
   },
