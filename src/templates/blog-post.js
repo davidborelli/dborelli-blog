@@ -18,7 +18,7 @@ const BlogPost = ({ data, pageContext }) => {
     <Layout>
       <SEO
         title={post.frontmatter.title}
-        description="post.frontmatter.description"
+        description={post.frontmatter.description}
         image={`https://dborelli.com.br${post.frontmatter.image}`}
       />
       <S.PostHeader>
