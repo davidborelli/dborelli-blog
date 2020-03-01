@@ -16,10 +16,10 @@ const Layout = ({ children }) => {
       <TransitionPortal level="top">
         <Sidebar />
       </TransitionPortal>
+      <S.LayoutMain>{children}</S.LayoutMain>
       <TransitionPortal level="top">
         <MenuBar />
       </TransitionPortal>
-      <S.LayoutMain>{children}</S.LayoutMain>
     </S.LayoutWrapper>
   )
 }

@@ -10,6 +10,7 @@ export const MenuBarWrapper = styled.aside`
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
+  padding: 0.8rem 0;
   position: fixed;
   right: 0;
   width: 3.75rem;
@@ -50,9 +51,13 @@ export const MenuBarItem = styled.span`
   cursor: pointer;
   display: block;
   height: 1.45rem;
-  padding: 1.1rem;
+  margin: 1.1rem 0;
   position: relative;
   width: 1.45rem;
+
+  /* &:first-child {
+    margin-top: 1.1rem;
+  } */
 
   &.light {
     color: #d4d400;
@@ -64,20 +69,16 @@ export const MenuBarItem = styled.span`
     `}
   }
 
-  &:hover {
-    color: var(--highlight);
-  }
-
-  /* ${media.greaterThan("large")`
+  ${media.greaterThan("large")`
     &:hover {
       color: var(--highlight);
     }
-  `} */
+  `}
 
-  /* ${media.lessThan("large")`
+  ${media.lessThan("large")`
     height: 3.2rem;
     padding: .9rem;
     position: relative;
     width: 3.2rem;
-  `} */
+  `}
 `

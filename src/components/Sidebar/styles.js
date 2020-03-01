@@ -11,12 +11,13 @@ export const SidebarWrapper = styled.aside`
   height: 100vh;
   position: fixed;
   padding: 2rem;
-  width: 16rem;
+  width: 20rem;
 
   ${media.lessThan("large")`
     align-items: flex-start;
     height: auto;
-    padding: 1rem 2rem;
+    padding: 1rem;
+    position: inherit;
     width: 100%;
   `}
 `
