@@ -67,6 +67,7 @@ export const BoxHandle = styled.article`
     padding: 2rem 1rem;
     flex-direction: column;
     justify-content: center;
+    background: var(--mediumBackground);
   }
 
   ${media.lessThan("large")`
