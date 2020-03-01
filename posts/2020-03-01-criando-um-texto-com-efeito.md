@@ -10,10 +10,9 @@ background: '#e34d26'
 
 Fala pessoal hoje vou escrever sobre um assunto que sempre me deu muita repulsa, porém depois de estudá-lo um pouco mais, vi que não é nenhum bicho de sete cabeças, afinal que Dev. nunca se pegou quebrando a cabeça e tomando uma surra de HTML e CSS para centralizar um simples elemento na página lá no começo da carreira? rsrsrs
 
-Você deve estar se perguntando que assunto é esse, porém o título não deu espaço para surpresa e já denunciou que vamos criar um texto com efeito utilizando HTML, CSS e um pouco de JS, e o resultado final será como esse: 
+Você deve estar se perguntando que assunto é esse, porém o título não me deu espaço para surpresa e já denunciou que vamos criar um texto com efeito utilizando HTML, CSS e um pouco de JS, e o resultado final será como esse: 
 
 ![GoodGo gif](/assets/img/GoodGo.gif)
-
 
 Enquanto eu escrevo esse post vou curtindo uma fucking playlist, montada com muito carinho por mim e outros amigos, de metalzão hahaha, caso curtir o estilo, segue o link: [TRY NOT TO HEADBANG](https://open.spotify.com/playlist/6NMCqtg2Q9MoFBeRzLVNXo?si=OZm97MjORA6ZpqnKsynChg)
 
@@ -110,13 +109,14 @@ const text = document.getElementById("text");
 const letters = rawText.split("");
 ```
 
-estou criando uma constante que vai ser o texto que queremos inserir na tela, no caso do exemplo foi "Good Go".
+estou criando uma constante que vai conter o texto que queremos inserir na tela, no caso do exemplo foi "Good Go".
 
-Logo após criei uma constante onde capturo o elemento do html que tem o id text, que vai ser o container onde vamos inserir o conteúdo.
+Logo após criei uma constante onde capturo o elemento do html que tem o id text, que é o container onde vamos inserir o conteúdo.
 
 Em seguida quebrei o texto com a função [split()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/split) transformando a palavra em um array, onde cada letra é uma elemento do array, deixando na seguinte estrutura:
 
-Antes -> "Good Go"; </br> Depois -> \["G", "o", "o", "d", " ", "G", "o"].
+Antes -> "Good Go"; \
+Depois -> \["G", "o", "o", "d", " ", "G", "o"].
 
 Em
 
@@ -147,3 +147,79 @@ A estrutura montada fica da seguinte forma:
 O resultado deve ter ficado da seguinte forma:
 
 ![Resultado esperado 1](/assets/img/blog-goodgo-1.png)
+
+Agora vamos inserir a linha que corta o texto. 
+
+No arquivo style.css vamos inserir um pseudo-elemento, após o bloco de estilos do h1, inserimos o seguinte:
+
+````css
+h1::after {
+  position: absolute;
+  top: 45%;
+  right: 0;
+  width: 100vw;
+  height: 2rem;
+  border-radius: 0 50px 50px 0;
+  background: crimson;
+  content: "";
+}
+```
+````
+
+Com esses estilos estamos inserindo um linha que irá surgir no início da tela, e ir até o final do texto, o resultado deve ter ficado semelhante à este:
+
+![GoodGo 2](/assets/img/blog-goodgo-2.png)
+
+Até o momento temos uma página com vários elementos na tela (letras), e uma linha que passa por cima de todas elas, agora teremos que bolar uma estratégia para que a linha intercale entre as letras, mas calma, já resolvi esse problema da seguinte forma.
+
+No arquivo script.js utilizei a lib Math para gerar números randômicos, como ela gera números de 0 à 1 estipulei que caso o número gerado randomicamente for maior que 0.5 é para inserir no elemento uma nova classe, "rev" uma abreviação de reverse, o código ficou da seguinte forma:
+
+```javascript
+letters.forEach(letter => {
+  const newElement = document.createElement("span");
+  newElement.classList.add("letter");
+  newElement.textContent = letter;
+
+  Math.random() > 0.5 && newElement.classList.add("rev");
+
+  text.appendChild(newElement);
+});
+```
+
+
+
+Dessa forma segreguei os elementos pelas classes, onde alguns tem apenas a classe "letter" e outros tem além a classe "rev", já vamos ver por qual motivo fiz isso, na próxima abordagem do problema.
+
+Agora no style.css nos estilos da tag h1, vamos adicionar a propriedade [transform-style](https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform-style) com o valor "preserve-3d", ela que irá habilitar os elementos filhos para  serem posicionados no espaço 3D, o código deve ficar semelhante a esse:
+
+```css
+h1 {
+  display: flex;
+  position: relative;
+  padding: 0 0.125em;
+  transform-style: preserve-3d;
+  font-size: 15rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+```
+
+
+
+Agora vamos editar o style.css para que possamos ter o feedback visual da propriedade que acabamos de inserir.
+
+```css
+.letter {
+  transform: rotatey(2deg);
+}
+
+.rev {
+  transform: rotatey(-2deg);
+}
+```
+
+Adicionamos mais dois estilos, um para os elementos que contenham a classe "letter" e outro para a classe "rev", o valor informado para a propriedade transform (rotatey()) irá rotacionar nosso elemento, os que tiverem a classe "letter" no sentido positivo do eixo Y, fazendo a linha iniciar passando no elemento por baixo, e saindo por cima, e os elementos com a classe "rev" ao contrário, a linha começa passando por cima, e sai por baixo do elemento.
+
+O resultado deve estar semelhante a esse:
+
+![GoodGo 2](/assets/img/blog-goodgo-3.png)
