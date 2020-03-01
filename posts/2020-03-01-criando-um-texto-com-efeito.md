@@ -12,7 +12,8 @@ Fala pessoal hoje vou escrever sobre um assunto que sempre me deu muita repulsa,
 
 Você deve estar se perguntando que assunto é esse, porém o título não deu espaço para surpresa e já denunciou que vamos criar um texto com efeito utilizando HTML, CSS e um pouco de JS, e o resultado final será como esse: 
 
-![GoodGo gif](/assets/img/blog-goodgo-finished.png)
+![GoodGo gif](/assets/img/GoodGo.gif)
+
 
 Enquanto eu escrevo esse post vou curtindo uma fucking playlist, montada com muito carinho por mim e outros amigos, de metalzão hahaha, caso curtir o estilo, segue o link: [TRY NOT TO HEADBANG](https://open.spotify.com/playlist/6NMCqtg2Q9MoFBeRzLVNXo?si=OZm97MjORA6ZpqnKsynChg)
 
