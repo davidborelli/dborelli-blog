@@ -50,7 +50,7 @@ export const PostDate = styled.p`
 
 export const MainContent = styled.section`
   margin: auto;
-  max-width: 70rem;
+  max-width: 60rem;
   padding: 2rem 5rem;
 
   ${media.lessThan("large")`
