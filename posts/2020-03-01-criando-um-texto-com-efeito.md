@@ -186,8 +186,6 @@ letters.forEach(letter => {
 });
 ```
 
-
-
 Dessa forma segreguei os elementos pelas classes, onde alguns tem apenas a classe "letter" e outros tem além a classe "rev", já vamos ver por qual motivo fiz isso, na próxima abordagem do problema.
 
 Agora no style.css nos estilos da tag h1, vamos adicionar a propriedade [transform-style](https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform-style) com o valor "preserve-3d", ela que irá habilitar os elementos filhos para  serem posicionados no espaço 3D, o código deve ficar semelhante a esse:
@@ -203,8 +201,6 @@ h1 {
   color: #fff;
 }
 ```
-
-
 
 Agora vamos editar o style.css para que possamos ter o feedback visual da propriedade que acabamos de inserir.
 
@@ -223,3 +219,114 @@ Adicionamos mais dois estilos, um para os elementos que contenham a classe "lett
 O resultado deve estar semelhante a esse:
 
 ![GoodGo 2](/assets/img/blog-goodgo-3.png)
+
+
+
+Agora falta apenas colocar as animações para dar mais vida, então vamos lá...
+
+No arquivo style.css vamos adicionar o código para duas animações, a animação **slide** que fará a linha que corta as letras deslizar da esquerda para direta, e a animação **goDown** que será responsável em fazer as letras caírem da parte superior da página e dar uma pequena quicada, o código é o seguinte:
+
+```css
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes goDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-1000px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+```
+
+Agora só informar onde elas(animações) serão utilizadas, ou seja, inserir a animação **slide** no pseudo-elemento de h1 e a animação g**oDown** no seletor dos elementos que possuem a classe "letter", ou seja, todos.
+
+O código dos seletores **h1::after** e **.letter** devem estar semelhantes a esse:
+
+```css
+h1::after {
+  position: absolute;
+  top: 45%;
+  right: 0;
+  width: 100vw;
+  height: 2rem;
+  border-radius: 0 50px 50px 0;
+  background: crimson;
+  content: "";
+  animation: slide 3s ease-out 0.4s backwards;
+}
+
+.letter {
+  transform: rotatey(2deg);
+  animation: goDown 1s backwards;
+}
+```
+
+
+
+Feito isso já devemos ter as letras caindo da parte superior da tela, porém descem todas juntas, então agora para deixar o exemplo mais desafiador e legal vamos fazer elas cairem em tempos diferentes, faremos isso através do JavaScript, no arquivo script.js na função que havíamos criado anteriormente vamos adicionar o seguinte código:
+
+```javascript
+const random = (min, max) => {
+  return Math.random() * (max - min) + min;
+};
+
+newElement.style.animationDelay = `${random(0.1, 0.6)}s`;
+newElement.style.animationDuration = `${random(0.4, 1)}s`;
+```
+
+No código acima estou criando uma função random, a mesma recebe dois valores, **min** e **max** que representa o intervalo entre o tempo máximo e mínimo que as letras devem cair, ela devolve um valor randômico entre os valores passados para ela.
+
+Abaixo estou inserindo no elemento (que é a letra), um delay(atraso) e o tempo que a animação deve levar, utilizando o [template string](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/template_strings) estou chamando a função passando os valores início e fim, na primeira chamada informo que o delay deve ter entre 0.1 segundo até no máximo 0.6 segundos, e que a duração da animação deve acontecer entre 0.4 segundos até no máximo 1 segundo, o código final dessa função deve ser semelhando ao abaixo:
+
+```javascript
+letters.forEach(letter => {
+  const newElement = document.createElement("span");
+  newElement.classList.add("letter");
+  newElement.textContent = letter;
+
+  const random = (min, max) => {
+    return Math.random() * (max - min) + min;
+  };
+
+  newElement.style.animationDelay = `${random(0.1, 0.6)}s`;
+  newElement.style.animationDuration = `${random(0.4, 1)}s`;
+
+  Math.random() > 0.5 && newElement.classList.add("rev");
+
+  text.appendChild(newElement);
+});
+```
+
+e finalmente terminamos, agora devemos ter nosso texto caindo da parte superior, cada letra com um tempo diferente, e após isso temos a linha que sai da esquerda para direita e passa por todas as letras, dando o efeito de intercalação.
+
+Uffa, espero que tenha gostado, se gostou da um joinh... não, pera, não estamos no YouTube hahaha.
+
+Você pode consultar o código desse projeto [](https://codepen.io/david-borelli/pen/WNvORMw)pelo [codepen](https://codepen.io/david-borelli/pen/WNvORMw) ou pode acessar o repositório dele no [GitHub](https://github.com/davidborelli/GoodGo).
+
+### Desafio
+
+Foi utilizado a frase **Good Go** pois a mesma possui letras onde a linha pode fazer a intersecção de uma forma natural, caso você digitar alguma palavra com as letras, exemplo T, I, B e algumas outras, vai ficar com um efeito não muito legal.
+
+Então o desafio é implementar a solução desse problema, quando for algumas dessas letras a linha deve passar totalmente por cima, ou por baixo, isso fica a seu critério.
+
+Coloque o link do GitHub ou do CodePen nos comentários com exercício resolvido, caso tenha feito. 
+
+**VAMOS INTERAGIR!**\
+Caso tenham alguma dúvida ou sugestão comente abaixo.
