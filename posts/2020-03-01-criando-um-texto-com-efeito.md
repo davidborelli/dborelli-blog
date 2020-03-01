@@ -1,6 +1,6 @@
 ---
 title: 'Criando um texto com efeito e animação com CSS, JS e HTML'
-description: 'Crie um texto de impacto com utilizando apenas HTML, JS e CSS'
+description: 'Crie um texto de impacto utilizando apenas HTML, JS e CSS'
 date: '2020-02-29 06:13:39'
 image: /assets/img/blog-goodgo-finished.png
 category: HTML
@@ -45,13 +45,7 @@ No index.html temos a estrutura básica de um HTML, já com a importação do st
 </html>
 ```
 
-a parte
-
-```html
-<h1 id="text"></h1>
-```
-
-servirá de container para inserirmos o texto, até o final do post ela permanecerá assim, não precisaremos mais mexer nele.
+o **h1** como podemos ver não tem nada, pois ele servirá de container para inserirmos o texto, vamos fazer isso logo mais, até o final do post o arquivo index.html permanecerá assim, não precisaremos mais mexer nele.
 
 Agora vamos inserir alguns estilos básicos no style.css para já ter algum feedback visual.
 
@@ -76,11 +70,11 @@ h1 {
 }
 ```
 
-Com esses estilos estamos:
+Com esses estilos estamos definindo o seguinte:
 
 **body:**   centralizando todo conteúdo no meio da tela, retirando as margens e  definindo que vamos utilizar a altura total, também estamos colocando uma imagem de fundo.
 
-**h1:**  o mesmo ainda não possui nada, porém já estamos definindo um estilo, alinhando o conteúdo para que ser apresentado no formato de linha, com "margens" laterais, definindo para o texto uma font, um tamanho e uma cor, resultado esperado deve ser apenas uma imagem com montanhas.
+**h1:**  o mesmo ainda não possui nada, porém já estamos definindo um estilo, alinhando o conteúdo para que ser apresentado no formato de linha, com "margens" laterais, definindo para o texto uma font, um tamanho e uma cor, o resultado esperado deve ser apenas uma imagem com montanhas.
 
 Agora vamos inserir conteúdo no script.js.
 
@@ -99,8 +93,7 @@ letters.forEach(letter => {
 });
 ```
 
-Vamos as explicações...\
-Em
+Vamos as explicações...
 
 ```javascript
 const rawText = "Good Go";
@@ -109,7 +102,7 @@ const text = document.getElementById("text");
 const letters = rawText.split("");
 ```
 
-estou criando uma constante que vai conter o texto que queremos inserir na tela, no caso do exemplo foi "Good Go".
+No código acima estou criando uma constante que vai conter o texto que queremos inserir na tela, no caso do exemplo foi "Good Go".
 
 Logo após criei uma constante onde capturo o elemento do html que tem o id text, que é o container onde vamos inserir o conteúdo.
 
@@ -118,7 +111,7 @@ Em seguida quebrei o texto com a função [split()](https://developer.mozilla.or
 Antes -> "Good Go"; \
 Depois -> \["G", "o", "o", "d", " ", "G", "o"].
 
-Em
+
 
 ```javascript
 letters.forEach(letter => {
@@ -130,7 +123,7 @@ letters.forEach(letter => {
 });
 ```
 
-é feita a transformação da palavra em um array, em seguida é percorrido todos os seus elementos utilizando o [forEach()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach), onde para cada elemento do array é criado um elemento HTML <span>, atribuído para ele a classe "letter" e inserindo o conteúdo da iteração em questão, e depois inserimos esse elemento na nossa página html.
+No código acima iremos criar um elemento HTML para cada elemento do array, vamos utilizar o [forEach()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) para isso. O elemento criado será um <span>, após sua criação é atribuído para ele a classe "letter" e inserindo o conteúdo da iteração em questão, e depois inserimos esse elemento na nossa página html.
 
 A estrutura montada fica da seguinte forma:
 
@@ -144,7 +137,7 @@ A estrutura montada fica da seguinte forma:
 <span class="letter">o</span>
 ```
 
-O resultado deve ter ficado da seguinte forma:
+O o feedback visual deve ter ficado da seguinte forma:
 
 ![Resultado esperado 1](/assets/img/blog-goodgo-1.png)
 
@@ -152,7 +145,7 @@ Agora vamos inserir a linha que corta o texto.
 
 No arquivo style.css vamos inserir um pseudo-elemento, após o bloco de estilos do h1, inserimos o seguinte:
 
-````css
+```css
 h1::after {
   position: absolute;
   top: 45%;
@@ -164,15 +157,14 @@ h1::after {
   content: "";
 }
 ```
-````
 
 Com esses estilos estamos inserindo um linha que irá surgir no início da tela, e ir até o final do texto, o resultado deve ter ficado semelhante à este:
 
 ![GoodGo 2](/assets/img/blog-goodgo-2.png)
 
-Até o momento temos uma página com vários elementos na tela (letras), e uma linha que passa por cima de todas elas, agora teremos que bolar uma estratégia para que a linha intercale entre as letras, mas calma, já resolvi esse problema da seguinte forma.
+Até o momento temos uma página com vários elementos na tela (letras), e uma linha que passa por cima de todos, agora teremos que bolar uma estratégia para que a linha intercale entre as letras, mas calma, já resolvi esse problema da seguinte forma.
 
-No arquivo script.js utilizei a lib Math para gerar números randômicos, como ela gera números de 0 à 1 estipulei que caso o número gerado randomicamente for maior que 0.5 é para inserir no elemento uma nova classe, "rev" uma abreviação de reverse, o código ficou da seguinte forma:
+No arquivo script.js utilizei a lib [Math](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math) para gerar números randômicos, como ela gera números de 0 à 1 estipulei que caso o número gerado randomicamente for maior que 0.5 é para inserir no elemento uma nova classe, "rev" uma abreviação de reverse, o código ficou da seguinte forma:
 
 ```javascript
 letters.forEach(letter => {
@@ -188,7 +180,7 @@ letters.forEach(letter => {
 
 Dessa forma segreguei os elementos pelas classes, onde alguns tem apenas a classe "letter" e outros tem além a classe "rev", já vamos ver por qual motivo fiz isso, na próxima abordagem do problema.
 
-Agora no style.css nos estilos da tag h1, vamos adicionar a propriedade [transform-style](https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform-style) com o valor "preserve-3d", ela que irá habilitar os elementos filhos para  serem posicionados no espaço 3D, o código deve ficar semelhante a esse:
+Agora no style.css, no seletor da tag h1, vamos adicionar a propriedade [transform-style](https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform-style) com o valor "preserve-3d", ela que irá habilitar os elementos filhos para  serem posicionados no espaço 3D, o código deve ficar semelhante a esse:
 
 ```css
 h1 {
@@ -214,17 +206,15 @@ Agora vamos editar o style.css para que possamos ter o feedback visual da propri
 }
 ```
 
-Adicionamos mais dois estilos, um para os elementos que contenham a classe "letter" e outro para a classe "rev", o valor informado para a propriedade transform (rotatey()) irá rotacionar nosso elemento, os que tiverem a classe "letter" no sentido positivo do eixo Y, fazendo a linha iniciar passando no elemento por baixo, e saindo por cima, e os elementos com a classe "rev" ao contrário, a linha começa passando por cima, e sai por baixo do elemento.
+Adicionamos mais dois estilos, um para os elementos que contenham a classe "letter" e outro para a classe "rev", o valor informado para a propriedade transform (rotatey()) irá rotacionar nosso elemento, os que tiverem a classe "letter" no sentido positivo do eixo Y, fazendo a linha iniciar passando por baixo da letra, e saindo por cima, e os elementos com a classe "rev" ao contrário, a linha começa passando por cima, e sai por baixo da letra.
 
 O resultado deve estar semelhante a esse:
 
 ![GoodGo 2](/assets/img/blog-goodgo-3.png)
 
-
-
 Agora falta apenas colocar as animações para dar mais vida, então vamos lá...
 
-No arquivo style.css vamos adicionar o código para duas animações, a animação **slide** que fará a linha que corta as letras deslizar da esquerda para direta, e a animação **goDown** que será responsável em fazer as letras caírem da parte superior da página e dar uma pequena quicada, o código é o seguinte:
+No arquivo style.css vamos adicionar o código de duas animações, a animação **slide** que fará a linha que corta as letras deslizar da esquerda para direta, e a animação **goDown** que será responsável em fazer as letras caírem da parte superior da página e dar uma pequena quicada, o código é o seguinte:
 
 ```css
 @keyframes slide {
@@ -255,7 +245,7 @@ No arquivo style.css vamos adicionar o código para duas animações, a animaç�
 }
 ```
 
-Agora só informar onde elas(animações) serão utilizadas, ou seja, inserir a animação **slide** no pseudo-elemento de h1 e a animação g**oDown** no seletor dos elementos que possuem a classe "letter", ou seja, todos.
+Agora só informar onde elas(animações) serão utilizadas, ou seja, inserir a animação **slide** no seletor do pseudo-elemento de h1 e a animação g**oDown** no seletor da classe "letter".
 
 O código dos seletores **h1::after** e **.letter** devem estar semelhantes a esse:
 
@@ -278,9 +268,7 @@ h1::after {
 }
 ```
 
-
-
-Feito isso já devemos ter as letras caindo da parte superior da tela, porém descem todas juntas, então agora para deixar o exemplo mais desafiador e legal vamos fazer elas cairem em tempos diferentes, faremos isso através do JavaScript, no arquivo script.js na função que havíamos criado anteriormente vamos adicionar o seguinte código:
+Feito isso já devemos ter as letras caindo da parte superior da tela, porém descem todas juntas, então agora para deixar o exemplo mais desafiador e legal, vamos fazer elas cairem em tempos diferentes, faremos isso através do JavaScript, no arquivo script.js na função que havíamos criado anteriormente vamos adicionar o seguinte código:
 
 ```javascript
 const random = (min, max) => {
@@ -314,7 +302,7 @@ letters.forEach(letter => {
 });
 ```
 
-e finalmente terminamos, agora devemos ter nosso texto caindo da parte superior, cada letra com um tempo diferente, e após isso temos a linha que sai da esquerda para direita e passa por todas as letras, dando o efeito de intercalação.
+e finalmente terminamos, agora devemos ter nosso texto caindo da parte superior, cada letra com um tempo diferente, e após isso temos a linha que sai da esquerda para direita e passa por todas as letras, dando o efeito de intersecção.
 
 Uffa, espero que tenha gostado, se gostou da um joinh... não, pera, não estamos no YouTube hahaha.
 
