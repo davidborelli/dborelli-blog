@@ -1,8 +1,8 @@
 ---
-title: Criando um texto com efeito
+title: 'Criando um texto com efeito e animação com CSS, JS e HTML'
 description: 'Crie um texto de impacto com utilizando apenas HTML, JS e CSS'
 date: '2020-02-29 06:13:39'
-image: /assets/img/blog-goodgo-1.png
+image: /assets/img/blog-goodgo-finished.png
 category: HTML
 background: '#e34d26'
 ---
@@ -12,10 +12,9 @@ Fala pessoal hoje vou escrever sobre um assunto que sempre me deu muita repulsa,
 
 Você deve estar se perguntando que assunto é esse, porém o título não deu espaço para surpresa e já denunciou que vamos criar um texto com efeito utilizando HTML, CSS e um pouco de JS, e o resultado final será como esse: 
 
-![GoodGo gif](/assets/img/GoodGo.gif)
+![GoodGo gif](/assets/img/blog-goodgo-finished.png)
 
-Enquanto eu escrevo esse post vou curtindo uma fucking playlist, montada com muito carinho por mim e outros amigos, de metalzão hahaha,
-caso curtir o estilo, segue o link: [TRY NOT TO HEADBANG](spotify:playlist:6NMCqtg2Q9MoFBeRzLVNXo)
+Enquanto eu escrevo esse post vou curtindo uma fucking playlist, montada com muito carinho por mim e outros amigos, de metalzão hahaha, caso curtir o estilo, segue o link: [TRY NOT TO HEADBANG](https://open.spotify.com/playlist/6NMCqtg2Q9MoFBeRzLVNXo?si=OZm97MjORA6ZpqnKsynChg)
 
 ## Hands-on
 
@@ -47,9 +46,11 @@ No index.html temos a estrutura básica de um HTML, já com a importação do st
 ```
 
 a parte
+
 ```html
 <h1 id="text"></h1>
 ```
+
 servirá de container para inserirmos o texto, até o final do post ela permanecerá assim, não precisaremos mais mexer nele.
 
 Agora vamos inserir alguns estilos básicos no style.css para já ter algum feedback visual.
@@ -75,15 +76,14 @@ h1 {
 }
 ```
 
-**Com esses estilos estamos: ** </br>
+Com esses estilos estamos:
 
-**body:** 
- centralizando todo conteúdo no meio da tela, retirando as margens e  definindo que vamos utilizar a altura total, também estamos colocando uma imagem de fundo.
+**body:**   centralizando todo conteúdo no meio da tela, retirando as margens e  definindo que vamos utilizar a altura total, também estamos colocando uma imagem de fundo.
 
-**h1:**
- o mesmo ainda não possui nada, porém já estamos definindo um estilo, alinhando o conteúdo para que ser apresentado no formato de linha, com "margens" laterais, definindo para o texto uma font, um tamanho e uma cor, resultado esperado deve ser apenas uma imagem com montanhas.
+**h1:**  o mesmo ainda não possui nada, porém já estamos definindo um estilo, alinhando o conteúdo para que ser apresentado no formato de linha, com "margens" laterais, definindo para o texto uma font, um tamanho e uma cor, resultado esperado deve ser apenas uma imagem com montanhas.
 
 Agora vamos inserir conteúdo no script.js.
+
 ```javascript
 const rawText = "Good Go";
 
@@ -99,25 +99,26 @@ letters.forEach(letter => {
 });
 ```
 
-Vamos as explicações... </br>
-
+Vamos as explicações...\
 Em
+
 ```javascript
 const rawText = "Good Go";
 
 const text = document.getElementById("text");
 const letters = rawText.split("");
 ```
+
 estou criando uma constante que vai ser o texto que queremos inserir na tela, no caso do exemplo foi "Good Go".
 
 Logo após criei uma constante onde capturo o elemento do html que tem o id text, que vai ser o container onde vamos inserir o conteúdo.
 
 Em seguida quebrei o texto com a função [split()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/split) transformando a palavra em um array, onde cada letra é uma elemento do array, deixando na seguinte estrutura:
 
-Antes -> "Good Go"; </br>
-Depois -> ["G", "o", "o", "d", " ", "G", "o"].
+Antes -> "Good Go"; </br> Depois -> \["G", "o", "o", "d", " ", "G", "o"].
 
 Em
+
 ```javascript
 letters.forEach(letter => {
   const newElement = document.createElement("span");
@@ -131,6 +132,7 @@ letters.forEach(letter => {
 é feita a transformação da palavra em um array, em seguida é percorrido todos os seus elementos utilizando o [forEach()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach), onde para cada elemento do array é criado um elemento HTML <span>, atribuído para ele a classe "letter" e inserindo o conteúdo da iteração em questão, e depois inserimos esse elemento na nossa página html.
 
 A estrutura montada fica da seguinte forma:
+
 ```html
 <span class="letter">G</span>
 <span class="letter">o</span>
@@ -144,5 +146,3 @@ A estrutura montada fica da seguinte forma:
 O resultado deve ter ficado da seguinte forma:
 
 ![Resultado esperado 1](/assets/img/blog-goodgo-1.png)
-
-
